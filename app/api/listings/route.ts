@@ -44,7 +44,5 @@ export async function POST(request: Request) {
     },
   });
 
-  console.log(listing);
-
   return NextResponse.json(listing);
 }

@@ -9,6 +9,7 @@ interface IParams {
 export default async function getReservations(params: IParams) {
   try {
     const { listingId, userId, authorId } = params;
+
     const query: any = {};
 
     if (listingId) {
@@ -32,6 +33,7 @@ export default async function getReservations(params: IParams) {
         createdAt: "desc",
       },
     });
+
     const safeReservations = reservations.map((reservation) => ({
       ...reservation,
       createdAt: reservation.createdAt.toISOString(),
